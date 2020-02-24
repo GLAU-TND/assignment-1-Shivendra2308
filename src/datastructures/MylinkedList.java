@@ -21,4 +21,19 @@ public class MylinkedList<T extends Comparable<T>> {
     public void setHead(Node<T> head) {
         this.head = head;
     }
+
+    //method to insert new node
+    public void insert(Node<T> node) {
+        if (getHead() == null) {
+            setHead(node);
+        } else {
+            Node<T> temp = head;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(node);
+        }
+
+    }
 }
+
