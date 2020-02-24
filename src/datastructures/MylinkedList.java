@@ -22,6 +22,7 @@ public class MylinkedList<T extends Comparable<T>> {
         this.head = head;
     }
 
+
     //method to insert new node
     public void insert(Node<T> node) {
         if (getHead() == null) {
@@ -34,6 +35,23 @@ public class MylinkedList<T extends Comparable<T>> {
             temp.setNext(node);
         }
 
+
     }
+
+    public boolean isEmpty() {
+        return getHead() == null;
+    }
+
+    //method to delete from begining
+    public Node<T> delete() {
+        if (isEmpty()) {
+            System.out.println("underflow");
+            return null;
+        }
+        Node<T> temp = getHead();
+        setHead(getHead().getNext());
+        return temp;
+    }
+
 }
 
